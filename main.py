@@ -8,9 +8,9 @@ def menu():
 
 def encode(password):
     encode_password = ""
-    for digits in password:
-        encode_password = str(int(digits) + 3)
-
+    for item in password:
+        encode_item = str(int(item) + 3)
+        encode_password += encode_item
     return encode_password
 
 
@@ -29,8 +29,8 @@ if __name__ == '__main__':
             password = input("Please enter your password to encode: ")
             encode_password = encode(password)
             print("Your password has been encoded and stored!")
-            print(encode_password)
         if choice == "2":
-            print(f"The encoded password is {encode_password} and the original password is {decode}")
+            decode_password = encode_password
+            print(f"The encoded password is", encode_password, "and the original password is", decode(decode_password), ".")
         if choice == "3":
             break
